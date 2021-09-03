@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@src/*": ["src/*"],
+            "@context/*": ["src/context/*"],
+            "@core/*": ["src/components/core/*"],
+            "@graphql/*": ["src/graphql/*"],
+            "@helpers/*": ["src/helpers/*"],
+            "@icons/*": ["src/components/icons/*"],
+            "@layouts/*": ["src/components/layous/*"],
+            "@pages/*": ["src/pages/*"],
+            "@routes/*": ["src/components/routes/*"],
+            "@styled/*": ["src/styled/*"]
+        }
+    },
+    "exclude": ["node_modules", "build"]
+
+}
