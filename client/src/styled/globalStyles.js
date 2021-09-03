@@ -126,29 +126,6 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 
-	:root {
-		--grid-gutter: ${include.sp['2']};
-		--lane-gutter: ${include.sp['3']};
-
-		${include.md()`
-			--grid-gutter: ${include.sp['3']};
-			--lane-gutter: ${include.sp['8']};
-		`}
-
-		${include.xl()`
-			--grid-gutter: ${include.sp['4']};
-			--lane-gutter: 136px;
-		`}
-
-		${include.md()`
-			--grid-gutter: ${include.sp['4']};
-			--lane-gutter: 224px;
-		`}
-
-		${include.above(include.contain['offset'])`
-			--grid-gutter: ${include.sp['4']};
-			--lane-gutter: ${include.sp['20']};
-		`}
-	}
+	:root {}
 
 `

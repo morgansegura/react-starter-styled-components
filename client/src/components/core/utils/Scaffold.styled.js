@@ -1,37 +1,46 @@
 import styled from 'styled-components'
-import { rgba } from 'polished'
 import * as include from '@styled/utilities'
 
 export const Scaffold = styled.div`
-	--max-width: calc(100% - (2 * var(--lane-gutter)));
+	--size: 'Small Mobile: 0 - 374px';
 	--columns: 6;
 	--color: hsla(204, 80%, 72%, 0.25);
-	--size: 'Small Mobile: 0 - 374px';
+	--grid-gutter: ${include.sp['2']};
+	--lane-gutter: ${include.sp['3']};
+	--max-width: calc(100% - (2 * var(--lane-gutter)));
 
-	${include.sm()`
+	${include.media.sm`
         --size: 'Mobile: 375px - 639px';
     `}
 
-	${include.md()`
-		--size: 'Tablet: 640px - 1023px';
+	${include.media.md`
+        --size: 'Tablet: 640px - 1023px';
+        --grid-gutter: ${include.sp['3']};
+        --lane-gutter: ${include.sp['8']};
 	`}
 
-	${include.lg()`
+	${include.media.lg`
 		--columns: 12;
-		--size: 'Small Desktop: 1024px - 1366px';
+        --size: 'Small Desktop: 1024px - 1366px';
 	`}
 
-	${include.xl()`
-		--size: 'Desktop: 1376px - 1799px';
+	${include.media.xl`
+        --size: 'Desktop: 1376px - 1799px';
+			--grid-gutter: ${include.sp['4']};
+			--lane-gutter: 136px;
 	`}
 
-	${include.xxl()`
-		--size: 'Large Desktop: 1800px - 1928px';
+	${include.media.xxl`
+        --size: 'Large Desktop: 1800px - 1928px';
+			--grid-gutter: ${include.sp['4']};
+			--lane-gutter: 224px;
 	`}
 
 	${include.above(include.contain['offset'])`
 		--max-width: ${include.contain['xxl']} - (2 * var(--lane-gutter)));
 		--size: '2256px and beyond';
+			--grid-gutter: ${include.sp['4']};
+			--lane-gutter: ${include.sp['20']};
 	`}
 
 	--repeating-width: calc(100% / var(--columns));

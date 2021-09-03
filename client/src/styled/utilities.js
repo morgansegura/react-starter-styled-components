@@ -277,42 +277,30 @@ export const above = amount => {
 	`
 }
 
-export const sm = () => {
-	return style => css`
+export const media = {
+	sm: (...args) => css`
 		@media (min-width: ${device['mobile']}) {
-			${style};
+			${css(...args)};
 		}
-	`
-}
-
-export const md = () => {
-	return style => css`
+	`,
+	md: (...args) => css`
 		@media (min-width: ${device['tablet']}) {
-			${style};
+			${css(...args)};
 		}
-	`
-}
-
-export const lg = () => {
-	return style => css`
+	`,
+	lg: (...args) => css`
 		@media (min-width: ${device['desktop-sm']}) {
-			${style};
+			${css(...args)};
 		}
-	`
-}
-
-export const xl = () => {
-	return style => css`
+	`,
+	xl: (...args) => css`
 		@media (min-width: ${device['desktop']}) {
-			${style};
+			${css(...args)};
 		}
-	`
-}
-
-export const xxl = () => {
-	return style => css`
+	`,
+	xxl: (...args) => css`
 		@media (min-width: ${device['desktop-lg']}) {
-			${style};
+			${css(...args)};
 		}
 	`
 }
@@ -327,11 +315,11 @@ export const h1 = css`
 	line-height: 1.15;
 	font-weight: 600;
 
-	${md()`
+	${media.md`
 		font-size: ${rem('48px')};
 	`}
 
-	${lg()`
+	${media.lg`
 		font-size: ${rem('52px')};
 	`}
 `
@@ -341,11 +329,11 @@ export const h2 = css`
 	line-height: 1.15;
 	font-weight: 600;
 
-	${md()`
+	${media.md`
 		font-size: ${rem('40px')};
 	`}
 
-	${lg()`
+	${media.lg`
 		font-size: ${rem('41px')};
 	`}
 `
@@ -355,7 +343,7 @@ export const h3 = css`
 	line-height: 1.15;
 	font-weight: 600;
 
-	${lg()`
+	${media.lg`
 		font-size: ${rem('32px')};
 	`}
 `
@@ -365,7 +353,7 @@ export const h4 = css`
 	line-height: 1.2;
 	font-weight: 600;
 
-	${md()`
+	${media.md`
 		font-size: ${rem('25px')};
 	`}
 `
@@ -375,7 +363,7 @@ export const h5 = css`
 	line-height: 1.2;
 	font-weight: 600;
 
-	${md()`
+	${media.md`
 		font-size: ${rem('20px')};
 		line-height: 1.4;
 	`}
@@ -387,12 +375,12 @@ export const body = {
 		line-height: 1.5;
 		font-weight: 400;
 
-		${md()`
+		${media.md`
 			font-size: ${rem('18px')};
 			line-height: 1.55;
 		`}
 
-		${lg()`
+		${media.lg`
 			font-size: ${rem('20px')};
 			line-height: 1.5;
 		`}
@@ -402,7 +390,7 @@ export const body = {
 		line-height: 1.5;
 		font-weight: 400;
 
-		${lg()`
+		${media.lg`
 			font-size: ${rem('28px')};
 		`}
 	`,
@@ -411,12 +399,12 @@ export const body = {
 		line-height: 1.5;
 		font-weight: 600;
 
-		${md()`
+		${media.md`
 			font-size: ${rem('18px')};
 			line-height: 1.55;
 		`}
 
-		${lg()`
+		${media.lg`
 			font-size: ${rem('20px')};
 			line-height: 1.5;
 		`}
@@ -426,7 +414,7 @@ export const body = {
 		line-height: 1.5;
 		font-weight: 400;
 
-		${md()`
+		${media.md`
 			font-size: ${rem('16px')};
 		`}
 	`,
@@ -435,7 +423,7 @@ export const body = {
 		line-height: ${rem('24px')};
 		font-weight: 600;
 
-		${md()`
+		${media.md`
 			font-size: ${rem('16px')};
 			line-height: 1.5r;
 		`}
@@ -448,7 +436,7 @@ export const callToAction = css`
 	line-height: 1.2;
 	font-weight: 600;
 
-	${md()`
+	${media.md`
 		font-size: ${rem('16px')};
 	`}
 `
@@ -534,17 +522,17 @@ export const container = {
 		margin-right: ${sp[2]};
 		margin-left: ${sp[2]};
 
-		${md()`
+		${media.md`
 			margin-right: ${sp[5]};
 			margin-left: ${sp[5]};
 		`}
 
-		${xl()`
+		${media.xl`
 			margin-right: ${sp[9]};
 			margin-left: ${sp[9]};
 		`}
 
-		${xxl()`
+		${media.xxl`
 			margin-right: ${sp[20]};
 			margin-left: ${sp[20]};
 		`}
@@ -560,12 +548,12 @@ export const container = {
 		margin-right: ${sp[1]};
 		margin-left: ${sp[1]};
 
-		${md()`
+		${media.md`
 			margin-right: ${sp[3]};
 			margin-left: ${sp[3]};
 		`}
 
-		${xl()`
+		${media.xl`
 			margin-right: ${sp[8]};
 			margin-left: ${sp[8]};
 		`}
