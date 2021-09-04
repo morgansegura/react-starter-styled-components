@@ -467,12 +467,6 @@ export const tag = {
 	`
 }
 
-export const grid = css`
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	column-gap: var(--grid-gutter);
-`
-
 export const shadow = {
 	card: css`
 		box-shadow: 0 4.581080913543701px 22.905405044555664px 0 #a4abb71f,
@@ -570,3 +564,9 @@ export const text = {
 		color: ${neutral['00']};
 	`
 }
+
+export const grid = css`
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	column-gap: var(--grid-gutter);
+`

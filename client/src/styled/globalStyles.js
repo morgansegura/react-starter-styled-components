@@ -126,6 +126,24 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 
-	:root {}
+	:root {
+		--grid-gutter: ${include.sp['2']};
+
+		${include.media.md`
+			--grid-gutter: ${include.sp['3']};
+		`}
+
+		${include.media.xl`
+			--grid-gutter: ${include.sp['4']};
+		`}
+
+		${include.media.xxl`
+			--grid-gutter: ${include.sp['4']};
+		`}
+
+		${include.above(include.contain['offset'])`
+			--grid-gutter: ${include.sp['4']};
+		`}
+	}
 
 `

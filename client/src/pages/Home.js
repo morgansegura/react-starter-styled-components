@@ -3,9 +3,8 @@
 // import { AuthContext } from '@context/authContext'
 // import { GET_ALL_POSTS } from '@graphql/queries'
 
-// Core Components
-import Button from '@core/interaction/Button'
-import Container, { Content } from '@core/structure/Container'
+// Layout Components
+import BannerTextImage from '@layouts/BannerTextImage'
 
 // Styled
 import * as s from './Home.styled'
@@ -33,22 +32,14 @@ const Home = () => {
 	// }
 
 	return (
-		<Container>
-			<Content>
-				<s.Title>GraphQL Posts</s.Title>
-
-				<s.PostGrid>
-					<h1>This is a h1 heading</h1>
-					<h2>This is a h2 heading</h2>
-					<h3>This is a h3 heading</h3>
-					<h4>This is a h4 heading</h4>
-					<h6>This is a h5 heading</h6>
-				</s.PostGrid>
-				<s.Button>
-					<Button>Load More</Button>
-				</s.Button>
-			</Content>
-		</Container>
+		<>
+			<BannerTextImage
+				heading="Time Mackie, PhD"
+				subheading="Hello"
+				description="Discovering how the Bible is a magnificent work of literature that invites us into the story of Jesus—this is what Tim is all about."
+				image="//dma9sdczpu5q0.cloudfront.net/media/01b_lifestyle.jpg?q=65&fit=max"
+			/>
+		</>
 	)
 }
 

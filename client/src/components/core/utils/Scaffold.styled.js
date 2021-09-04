@@ -5,45 +5,41 @@ export const Scaffold = styled.div`
 	--size: 'Small Mobile: 0 - 374px';
 	--columns: 6;
 	--color: hsla(204, 80%, 72%, 0.25);
+	--max-width: calc(100% - (2 * var(--lane-gutter)));
 	--grid-gutter: ${include.sp['2']};
 	--lane-gutter: ${include.sp['3']};
-	--max-width: calc(100% - (2 * var(--lane-gutter)));
 
 	${include.media.sm`
-        --size: 'Mobile: 375px - 639px';
-    `}
+        	--size: 'Mobile: 375px - 639px';
+    	`}
 
 	${include.media.md`
-        --size: 'Tablet: 640px - 1023px';
-        --grid-gutter: ${include.sp['3']};
-        --lane-gutter: ${include.sp['8']};
-	`}
+			--size: 'Tablet: 640px - 1023px';
+			--lane-gutter: ${include.sp['8']};
+		`}
 
-	${include.media.lg`
-		--columns: 12;
-        --size: 'Small Desktop: 1024px - 1366px';
-	`}
-
-	${include.media.xl`
-        --size: 'Desktop: 1376px - 1799px';
-			--grid-gutter: ${include.sp['4']};
+		${include.media.xl`
+			--size: 'Desktop: 1376px - 1799px';
 			--lane-gutter: 136px;
-	`}
+		`}
 
-	${include.media.xxl`
-        --size: 'Large Desktop: 1800px - 1928px';
-			--grid-gutter: ${include.sp['4']};
+		${include.media.lg`
+			--columns: 12;
+			--size: 'Small Desktop: 1024px - 1366px';
+		`}
+
+		${include.media.xxl`
+			--size: 'Large Desktop: 1800px - 1928px';
 			--lane-gutter: 224px;
-	`}
+		`}
 
-	${include.above(include.contain['offset'])`
-		--max-width: ${include.contain['xxl']} - (2 * var(--lane-gutter)));
-		--size: '2256px and beyond';
-			--grid-gutter: ${include.sp['4']};
+		${include.above(include.contain['offset'])`
 			--lane-gutter: ${include.sp['20']};
-	`}
+			--max-width: ${include.contain['xxl']} - (2 * var(--lane-gutter)));
+			--size: '2256px and beyond';
+		`}
 
-	--repeating-width: calc(100% / var(--columns));
+		--repeating-width: calc(100% / var(--columns));
 	--column-width: calc((100% / var(--columns)) - var(--grid-gutter));
 	--background-width: calc(100% + var(--grid-gutter));
 	--background-columns: repeating-linear-gradient(
